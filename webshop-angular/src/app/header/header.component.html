@@ -1,0 +1,21 @@
+<nav class="navbar fixed-top navbar-expand-md navbar-light bg-light">
+    <div class="container-fluid">
+        <h3>Webshop</h3>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+                <li *ngFor="let item of menuItems" class="nav-item">
+                    <a class="nav-link" style="font-size:13px" href="{{item.linkUrl}}">{{item.linkName}}</a>
+
+                </li>
+            </div>
+            <div class="navbar-nav ms-auto">
+                <a href="kosar" style="font-size:13px" class="nav-item nav-link">Kosár</a>
+                <a href="szerkesztes" style="font-size:13px" class="nav-item nav-link">Szerkesztés</a>
+                
+            </div>
+        </div>
+    </div>
+</nav>

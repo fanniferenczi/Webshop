@@ -1,0 +1,32 @@
+
+
+<!--<button style="margin-top: 65px;margin-bottom: 10px;" type="button" class="btn btn-outline-dark" >Termék hozzáadása</button> -->
+<a href="ujtermek" style="margin-top: 65px; margin-bottom: 10px; margin-left: 10px;"  class="btn btn-outline-dark">Termék hozzáadása</a>
+
+
+<div  class="row row-cols-xl-4 row-cols-md-3 g-4" style="margin-left: 10px;">
+      <div *ngFor="let product of products">
+      <div class="col">
+      <div class="card" style="width: 18rem;">
+        <img src="{{product.imageUrl}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{product.name}}</h5>
+          <p class="card-text">{{product.description}}</p>
+          <div>
+            <p class="price-text">{{product.price}} ft</p>
+            <a href="modositas" class="btn btn-outline-dark" style="margin-right: 3px;" (click)="saveForModifying(product)">Módosítás</a>
+
+            <button type="button" class="btn btn-outline-dark" (click)="onDelete(product)" >Törlés</button>
+          </div>
+        </div>
+        </div>
+        </div>
+      </div>
+    
+    </div>
+
+    
+    <simple-notifications></simple-notifications>
+    
+    
+    

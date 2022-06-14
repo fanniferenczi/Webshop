@@ -1,0 +1,38 @@
+<label for="category" style="margin-top: 65px;margin-left: 10px;" > Termék kategóriája</label>
+      <select  style="margin-left: 10px; margin-right: 10px" (change)="selectChangeHandler($event)" class="form-select" aria-label="Default select example" id="category"  ngModel name="category" >
+       
+        <option value="1" selected>Felsők</option>
+        <option value="2">Nadrágok</option>
+        <option value="3">Cipők</option>
+        <option value="4">Táskák</option> 
+      </select> 
+
+<form style="margin-top: 10px; margin-left: 10px; margin-right: 10px;" #addForm="ngForm" (ngSubmit)="onAddProduct(addForm)">
+
+    <div class="form-group">
+      <label for="name">Termék neve</label>
+      <input type="text" required class="form-control" id="name" ngModel name="name"  placeholder="Termék neve">
+    </div>
+
+    <div class="form-group">
+      <label for="description">Leírás</label>
+      <input type="text" required class="form-control" id="description"  ngModel name="description" placeholder="Leírás">
+    </div>
+   
+      <div class="form-group">
+        <label for="price">Termék ára</label>
+        <input type="number" min="0" required class="form-control" id="price" ngModel name="price"  placeholder="Termék ára">
+      </div>
+
+      <div class="form-group">
+        <label for="url">Kép URL</label>
+        <input type="text" required class="form-control" id="url" ngModel name="imageUrl" placeholder="Kép URL">
+      </div>
+
+      
+      <button [disabled]="addForm.invalid"  style="margin-top: 10px;" type="submit" class="btn btn-outline-dark">Hozzáadás</button>
+  </form>
+
+
+
+<simple-notifications></simple-notifications>
