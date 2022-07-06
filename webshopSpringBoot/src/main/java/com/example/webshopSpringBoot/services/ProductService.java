@@ -14,10 +14,10 @@ import java.util.List;
 public class ProductService {
 
     @Autowired
-    private ProductRepo productRepo;
+    private final ProductRepo productRepo;
 
     @Autowired
-    private CategoryRepo categoryRepository;
+    CategoryRepo categoryRepository;
 
     @Autowired
     public ProductService(ProductRepo productRepo) {
@@ -57,7 +57,7 @@ public class ProductService {
         Category category=categoryRepository.findById(categoryId).get();
         return productRepo.findAllByCategory(category);
     }
-    
+
     public void initCategoriesAndProducts(){
         Category tops=new Category("Felsők");
         Category trousers=new Category("Nadrágok");
