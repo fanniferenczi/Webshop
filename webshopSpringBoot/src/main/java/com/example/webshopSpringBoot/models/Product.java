@@ -8,12 +8,14 @@ import java.io.Serializable;
 @Entity
 public class Product implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
   //  @Column(nullable=false,updatable = false)
     private Long id;
     private String name;
     private String description;
     private int price;
+    @Lob
+    @Column
     private String imageUrl;
 
 

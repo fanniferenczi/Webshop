@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.PostConstruct;
 import java.util.List;
 
 @RestController
@@ -81,6 +82,11 @@ public class ProductController {
         List<Product> products =productService.getAllProductByCategoryId(categoryId);
         logger.trace("found "+products.size()+" products");
         return new ResponseEntity<>(products, HttpStatus.OK);
+    }
+
+    @PostConstruct
+    public void initCategoriesAndProducts(){
+        productService.initCategoriesAndProducts();
     }
 
 

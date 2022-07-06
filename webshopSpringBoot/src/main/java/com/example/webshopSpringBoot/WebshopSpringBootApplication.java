@@ -32,4 +32,6 @@ public class WebshopSpringBootApplication {
 		return new CorsFilter(urlBasedCorsConfigurationSource);
 	}
 
+
+
 }
